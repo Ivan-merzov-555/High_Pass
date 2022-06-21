@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High pass®</title>
+
+
+    <link rel="preload" href="/fonts/Roboto-Regular.woff" as="font">
+    <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font">
+    <link rel="preload" href="/fonts/TTFirsNeue-Regular.woff" as="font">
+    <link rel="preload" href="/fonts/TTFirsNeue-Regular.woff2" as="font">
+    <link rel="preload" href="/fonts/TTFirsNeue-Bold.woff" as="font">
+    <link rel="preload" href="/fonts/TTFirsNeue-Bold.woff2" as="font">
+
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <script src="js/just-validate.min.js"></script>
+    <script src="js/validate-inputmask.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/yandex-map.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <img class="logo__image" src="img/header/logo.png" alt="Логотип">
+            </div>
+            <nav class="header__nav">
+                <button class="header__burger-btn">
+                    <svg class="header__burger-icon" width="20" height = "18" fill = "none"><use xlink:href="img/svg/icons-sprite.svg#burger-icon"></use></svg>
+                    <svg class="header__burger-close-icon" width="23" height = "23" fill = "none"><use xlink:href="img/svg/icons-sprite.svg#close-search"></use></svg>
+                </button>
+                <ul class="header__list">
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#">О студии</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#">Наши проекты</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#">Услуги</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#">Мастер-классы</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__list-link" href="#">Контакты</a>
+                    </li>
+                    <li class="header__list-item header__list-item-phone">
+                        <a class="header__phone-link phone-link" href="#">
+                            <svg class="header__phone-icon phone-icon" width="22" height="22"><use xlink:href="img/svg/icons-sprite.svg#phone"></use></svg> +7 (495) 42-423-532
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="social-list header__social-list">
+                <li class="social-item header__social-item">
+                    <a class="social-link header__social-link" href="#">
+                        <svg class="social-icon header__social-icon" width="30" height="30" fill="none"><use xlink:href="img/svg/icons-sprite.svg#social-inst"></use></svg>
+                    </a>
+                </li>
+                <li class="social-item header__social-item">
+                    <a class="social-link header__social-link" href="#">
+                        <svg class="social-icon header__social-icon" width="30" height="30" fill="none"><use xlink:href="img/svg/icons-sprite.svg#social-fb"></use></svg>
+                    </a>
+                </li>
+                <li class="social-item header__social-item">
+                    <a class="social-link header__social-link" href="#">
+                        <svg class="social-icon header__social-icon" width="30" height="30" fill="none"><use xlink:href="img/svg/icons-sprite.svg#social-vk"></use></svg>
+                    </a>
+                </li>
+            </ul>
+            <form class="header__form" action="#" method="get">
+                <button class="header__form-btn" for="srch-input" type="submit" aria-label="Начать поиск по сайту">
+                    <svg class="header__search-icon" viewbox="0 0 25 25" fill = "none"><use xlink:href="img/svg/icons-sprite.svg#searchBtn"></use></svg>
+                    <svg class="header__search-close-icon" viewbox="0 0 25 25" fill = "none"><use xlink:href="img/svg/icons-sprite.svg#close-search"></use></svg>
+                </button>
+                <input class="header__form-input" name="srch-input" placeholder="Что искать?" type="search">
+            </form>
+        </div>
+    </header>
+    <main>
+
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <div class="hero__item hero__item-main">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/hero/hero-image-1_des.jpg">
+                            <source media="(min-width:769px)" srcset="img/hero/hero-image-1_tab.jpg">
+                            <source media="(min-width:321px)" srcset="img/hero/hero-image-1_smtab.jpg">
+                            <img class="hero__img" src="img/hero/hero-image-1_mob.jpg" alt="Фото участника">
+                        </picture>
+                        <span class="hash hero__hash">#мастеркласс</span>
+                        <div class="hero__info">
+                            <span class="hero__info-name">Мастер-класс от Игоря Робова</span>
+                            <h2 class="heading hero__info-heading">Неоновый фотосет 2.0 <br> 7 июля 20:00</h2>
+                            <button class="btn hero__info-btn">Узнать больше</button>
+                        </div>
+                    </div>
+                    <div class="hero__item hero__item-mid">
+                        <h1 class="heading hero__heading">Работы участников предыдущего мастер-класса</h1>
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/hero/hero-image-2_des.jpg">
+                            <source media="(min-width:769px)" srcset="img/hero/hero-image-2_tab.jpg">
+                            <source media="(min-width:321px)" srcset="img/hero/hero-image-2_smtab.jpg">
+                            <img class="hero__img" src="img/hero/hero-image-2_mob.jpg" alt="Фото участника">
+                        </picture>
+                    </div>
+                    <div class="hero__item hero__item-sm">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/hero/hero-image-3_des.jpg">
+                            <source media="(min-width:769px)" srcset="img/hero/hero-image-3_tab.jpg">
+                            <source media="(min-width:321px)" srcset="img/hero/hero-image-3_smtab.jpg">
+                            <img class="hero__img" src="img/hero/hero-image-3_mob.jpg" alt="Фото участника">
+                        </picture>
+                    </div>
+                    <div class="hero__item hero__item-sm">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/hero/hero-image-4_des.jpg">
+                            <source media="(min-width:769px)" srcset="img/hero/hero-image-4_tab.jpg">
+                            <source media="(min-width:321px)" srcset="img/hero/hero-image-4_smtab.jpg">
+                            <img class="hero__img" src="img/hero/hero-image-4_mob.jpg" alt="Фото участника">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="do">
+            <div class="container do__container">
+                <h2 class="heading do__heading">О студии</h2>
+                <div class="do__content">
+                    <div class="do__item">
+                        <p class="text do__text do__item-text">
+                            В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует
+                            от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров
+                            предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической
+                            и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.
+                        </p>
+                    </div>
+                    <div class="do__item do__item-form">
+                        <form class="do__form form" action="#">
+                            <label class="do__form-label" for="email">Подписаться на рассылку</label>
+                            <input class="do__form-input" type="email" id="email" name="email" placeholder="E-mail" data-validate-field="email">
+                            <button class="btn do__form-btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container projects__container">
+                <h2 class="heading projects__heading">Наши проекты</h2>
+                <div class="projects__content">
+                    <div class="projects__item projects__item-sm projects__item-sm-1">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/projects/projects-image-1-des.jpg">
+                            <source media="(min-width:931px)" srcset="img/projects/projects-image-1-tab.jpg">
+                            <source media="(min-width:561px)" srcset="img/projects/projects-image-1-smtab.jpg">
+                            <img class="projects__img" src="img/projects/projects-image-1-mob.jpg" alt="Фото проекта">
+                        </picture>
+                        <span class="hash projects__hash">#пейзаж</span>
+                        <p class="text projects__text projects__text-sm">
+                            Синтетически, смешаны с не уникальными данными до степени...
+                        </p>
+                        <div class="projects__date">
+                            <svg class="projects__date-icon" width="14" height="14"><use xlink:href="img/svg/icons-sprite.svg#calen"></use></svg>
+                            <span class="text projects__date-text">16 июня</span>
+                        </div>
+                    </div>
+                    <div class="projects__item projects__item-sm projects__item-sm-2">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/projects/projects-image-2-des.jpg">
+                            <source media="(min-width:931px)" srcset="img/projects/projects-image-2-tab.jpg">
+                            <source media="(min-width:561px)" srcset="img/projects/projects-image-2-smtab.jpg">
+                            <img class="projects__img" src="img/projects/projects-image-2-mob.jpg" alt="Фото проекта">
+                        </picture>
+                        <span class="hash projects__hash">#портрет</span>
+                        <p class="text projects__text projects__text-sm">
+                            В своём стремлении улучшить опыт мы упускаем, что явные...
+                        </p>
+                        <div class="projects__date">
+                            <svg class="projects__date-icon" width="14" height="14"><use xlink:href="img/svg/icons-sprite.svg#calen"></use></svg>
+                            <span class="text projects__date-text">28 мая</span>
+                        </div>
+                    </div>
+                    <div class="projects__item projects__item-sm projects__item-sm-3">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/projects/projects-image-3-des.jpg">
+                            <source media="(min-width:931px)" srcset="img/projects/projects-image-3-tab.jpg">
+                            <source media="(min-width:561px)" srcset="img/projects/projects-image-3-smtab.jpg">
+                            <img class="projects__img" src="img/projects/projects-image-3-mob.jpg" alt="Фото проекта">
+                        </picture>
+                        <span class="hash projects__hash">#предмет</span>
+                        <p class="text projects__text projects__text-sm">
+                            Равным образом, высокое качество позиционных...
+                        </p>
+                        <div class="projects__date">
+                            <svg class="projects__date-icon" width="14" height="14"><use xlink:href="img/svg/icons-sprite.svg#calen"></use></svg>
+                            <span class="text projects__date-text">14 мая</span>
+                        </div>
+                    </div>
+                    <div class="projects__item projects__item-lg projects__item-lg-1">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/projects/projects-image-4-des.jpg">
+                            <source media="(min-width:931px)" srcset="img/projects/projects-image-4-tab.jpg">
+                            <source media="(min-width:561px)" srcset="img/projects/projects-image-4-smtab.jpg">
+                            <img class="projects__img projects__lg-img" src="img/projects/projects-image-4-mob.jpg" alt="Фото проекта">
+                        </picture>
+                        <span class="hash projects__hash">#fuji</span>
+                        <div class="projects__info">
+                            <div class="projects__desc">
+                                <div class="projects__date">
+                                    <svg class="projects__date-icon" width="14" height="14"><use xlink:href="img/svg/icons-sprite.svg#calen"></use></svg>
+                                    <span class="text projects__date-text">9 апреля</span>
+                                </div>
+                                <h3 class="heading projects__item-heading">Cемантический разбор</h3>
+                                <p class="text projects__text projects__text-lg">
+                                    В рамках спецификации современных стандартов, интерактивные прототипы
+                                </p>
+                            </div>
+                            <a class="btn projects__item-link" href="#">О проекте</a>
+                        </div>
+                    </div>
+                    <div class="projects__item projects__item-lg projects__item-lg-2">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/projects/projects-image-5-des.jpg">
+                            <source media="(min-width:931px)" srcset="img/projects/projects-image-5-tab.jpg">
+                            <source media="(min-width:561px)" srcset="img/projects/projects-image-5-smtab.jpg">
+                            <img class="projects__img projects__lg-img" src="img/projects/projects-image-5-mob.jpg" alt="Фото проекта">
+                        </picture>
+                        <span class="hash projects__hash">#проектзабвение</span>
+                        <div class="projects__info">
+                            <div class="projects__desc">
+                                <div class="projects__date">
+                                    <svg class="projects__date-icon" width="14" height="14"><use xlink:href="img/svg/icons-sprite.svg#calen"></use></svg>
+                                    <span class="text projects__date-text">20 марта</span>
+                                </div>
+                                <h3 class="heading projects__item-heading">Забвение</h3>
+                                <p class="text projects__text projects__text-lg">
+                                    Играет важную роль в формировании глубокомысленных рассуждений
+                                </p>
+                            </div>
+                            <a class="btn projects__item-link" href="#">О проекте</a>
+                        </div>
+                    </div>
+                    <div class="projects__item projects__item-md projects__item-md-1">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/projects/projects-image-6-des.jpg">
+                            <source media="(min-width:931px)" srcset="img/projects/projects-image-6-tab.jpg">
+                            <source media="(min-width:561px)" srcset="img/projects/projects-image-6-smtab.jpg">
+                            <img class="projects__img" src="img/projects/projects-image-6-mob.jpg" alt="Фото проекта">
+                        </picture>
+                        <span class="hash projects__hash">#ретушь</span>
+                        <p class="text projects__text projects__text-md">
+                            Как принято считать, многие известные личности и по сей день остаются уделом либералов...
+                        </p>
+                        <div class="projects__date">
+                            <svg class="projects__date-icon" width="14" height="14"><use xlink:href="img/svg/icons-sprite.svg#calen"></use></svg>
+                            <span class="text projects__date-text">9 марта</span>
+                        </div>
+                    </div>
+                    <div class="projects__item projects__item-md projects__item-md-2">
+                        <picture>
+                            <source media="(min-width:1025px)" srcset="img/projects/projects-image-7-des.jpg">
+                            <source media="(min-width:931px)" srcset="img/projects/projects-image-7-tab.jpg">
+                            <source media="(min-width:561px)" srcset="img/projects/projects-image-7-smtab.jpg">
+                            <img class="projects__img" src="img/projects/projects-image-7-mob.jpg" alt="Фото проекта">
+                        </picture>
+                        <span class="hash projects__hash">#портрет</span>
+                        <p class="text projects__text projects__text-md">
+                            С учётом сложившейся международной обстановки, новая модель организационной...
+                        </p>
+                        <div class="projects__date">
+                            <svg class="projects__date-icon" width="14" height="14"><use xlink:href="img/svg/icons-sprite.svg#calen"></use></svg>
+                            <span class="text projects__date-text">1 марта</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contscts">
+            <div class="container contacts__container">
+                <h2 class="heading contacts__heading">Контакты</h2>
+                <div class="contacts__content">
+                    <div class="contacts__item contacts__item-map map" id="map">
+                        <div class="contacts__desc" id="desc">
+                            <button class="contacts__hide-btn" id="button"><svg class="contacts__desc-close-btn" fill = "none"><use xlink:href="img/svg/icons-sprite.svg#close-btn"></use></svg></button>
+                            <h3 class="heading contacts__heading">Студия “High pass”</h3>
+                            <p class="text contacts__text">
+                                107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+                            </p>
+                            <a href="#" class="contacts__phone phone-link">
+                                <svg class="contacts__phone-icon phone-icon" width="22" height="22"><use xlink:href="img/svg/icons-sprite.svg#phone"></use></svg> +7 (785) 22-473-592
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contacts__item contacts__item-form">
+                        <h3 class="heading contacts__form-heading">Оставить заявку</h3>
+                        <p class="text contacts__form-text">
+                            Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+                        </p>
+                        <form class="contacts__form form" action="#" autocomplete="off">
+                            <div class="contacts__form-valid"><input class="contacts__form-input" type="text" name="name" placeholder="Имя" data-validate-field="name"></div>
+                            <div class="contacts__form-valid"><input class="contacts__form-input" type="text" name="email" placeholder="E-mail" data-validate-field="email"></div>
+                            <textarea class="contacts__form-input" name="message" placeholder="Комментарий"></textarea>
+                            <button class="btn contacts__form-btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__item footer__item-logo">
+                <div class="logo">
+                    <img class="logo__image" src="img/header/logo.png" alt="Логотип">
+                    <span class="copyrights">Фотостудия High pass® 2018-2020</span>
+                </div>
+            </div>
+            <div class="footer__item footer__item-hide">
+                <p class="text footer__text">
+                    Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.
+                    <span class="text footer__text-copyrightg">© Имоджен Каннингем</span>
+                </p>
+            </div>
+            <div class="footer__item footer__item-social">
+                <span class="text footer__social-text">Больше интересного:</span>
+                <ul class="social-list footer__social-list">
+                    <li class="social-item footer__social-item">
+                        <a class="social-link footer__social-link" href="#">
+                            <svg class="social-icon footer__social-icon" width="30" height="30"><use xlink:href="img/svg/icons-sprite.svg#social-inst"></use></svg>
+                        </a>
+                    </li>
+                    <li class="social-item footer__social-item">
+                        <a class="social-link footer__social-link" href="#">
+                            <svg class="social-icon footer__social-icon" width="30" height="30"><use xlink:href="img/svg/icons-sprite.svg#social-fb"></use></svg>
+                        </a>
+                    </li>
+                    <li class="social-item footer__social-item">
+                        <a class="social-link footer__social-link" href="#">
+                            <svg class="social-icon footer__social-icon" width="30" height="30"><use xlink:href="img/svg/icons-sprite.svg#social-vk"></use></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
